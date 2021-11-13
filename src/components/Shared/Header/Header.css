@@ -1,5 +1,6 @@
 .header .navbar{
-    background: #dcdcdcc9;  
+    background: rgb(228, 233, 255); 
+    /* background: #dcdcdcc9;   */
 }  
 .navbar-brand img{
     height: 33px;

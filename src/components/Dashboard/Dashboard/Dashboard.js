@@ -56,7 +56,7 @@ function Dashboard(props) {
                         <h5>Admin Panel</h5>
 
                         <Link to="/"><Button variant="text">Back To Home</Button> </Link>
-                        <Link to={ `${url}` }> <Button variant="text">Dashboard</Button>  </Link>
+                        <Link to={ `${url}/Dashboard` }> <Button variant="text">Dashboard</Button>  </Link>
                         <Link to={ `${url}/ManageAllOrders` }> <Button variant="text">Manage All Orders</Button> </Link>
                         <Link to={ `${url}/AddAProduct` }> <Button variant="text">Add A Product</Button> </Link>
                         <Link to={ `${url}/MakeAdmin` }> <Button variant="text">Make Admin</Button> </Link>
@@ -82,14 +82,16 @@ function Dashboard(props) {
             }
             <br />
 
-            { user?.email ?
-                <button onClick={ logOut } className="btn btn-light">LogOut </button> :
-                <Link className="nav-link active" aria-current="page" to="/Login">Login</Link>
-            }
-            <span className="text-danger">
-                <br />
-                <small>{ user?.displayName }</small>
-            </span>
+            <Link>
+                { user?.email ?
+                    <button onClick={ logOut } className="btn btn-light">LogOut </button> :
+                    <Link className="nav-link active" aria-current="page" to="/Login">Login</Link>
+                }
+                <span className="text-danger">
+                    <br />
+                    <small>{ user?.displayName }</small>
+                </span>
+            </Link>
         </div >
     );
 

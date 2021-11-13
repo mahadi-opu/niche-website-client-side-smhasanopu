@@ -13,7 +13,7 @@ const Review = () => {
     const onSubmit = data => {
         data.userEmail = user?.email;
         data.userName = user?.displayName;
-        axios.post('https://nashville-baby-product-server.herokuapp.com/reviews', data)
+        axios.post('http://localhost:5000/reviews', data)
             .then(res => {
                 console.log(res)
                 if (res.data.insertedId) {
@@ -25,11 +25,11 @@ const Review = () => {
     return (
         <div className="p-5 mt-5 addproducts">
 
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <input {...register("title", { required: true })} placeholder="title" />
-                <input type="number" {...register("rating",)} placeholder="rating out of 5" />
-                <input {...register("info")} placeholder="Short Description" />
-                <input {...register("img")} placeholder="Image URL" />
+            <form onSubmit={ handleSubmit(onSubmit) }>
+                <input { ...register("title", { required: true }) } placeholder="title" />
+                <input type="number" { ...register("rating",) } placeholder="rating out of 5" />
+                <input { ...register("info") } placeholder="Short Description" />
+                <input { ...register("img") } placeholder="Image URL" />
 
                 <input type="submit" />
             </form>

@@ -5,7 +5,7 @@ import './Reviews.css'
 const Reviews = () => {
     const [ratings, setRatings] = useState([]);
     useEffect(() => {
-        fetch('https://nashville-baby-product-server.herokuapp.com/reviews')
+        fetch('http://localhost:5000/reviews')
             .then(res => res.json())
             .then(data => setRatings(data))
     }, []);
@@ -17,8 +17,8 @@ const Reviews = () => {
                         {
                             ratings.map(rating =>
                                 <Review
-                                    rating={rating.info}
-                                    ratings={rating}
+                                    rating={ rating.info }
+                                    ratings={ rating }
                                 ></Review>)
                         }
 

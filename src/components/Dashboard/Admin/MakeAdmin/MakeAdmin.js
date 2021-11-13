@@ -13,7 +13,7 @@ const MakeAdmin = () => {
 
         setEmail('');
         const user = { email }
-        fetch('https://nashville-baby-product-server.herokuapp.com/users/admin', {
+        fetch('http://localhost:5000/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,
@@ -38,13 +38,13 @@ const MakeAdmin = () => {
             {
                 success && <Alert severity="success">Made Admin Successfully!</Alert>
             }
-            <form onSubmit={handleAdmitSubmit}>
+            <form onSubmit={ handleAdmitSubmit }>
                 <TextField
-                    sx={{ width: '100%' }}
+                    sx={ { width: '100%' } }
                     label="Email"
                     type="email"
                     variant="standard"
-                    onBlur={handleOnBlur}
+                    onBlur={ handleOnBlur }
                 />
                 <Button type="submit" variant="contained"> Make Admin</Button>
 

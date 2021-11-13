@@ -33,19 +33,19 @@ const Footer = () => {
                             {/* <!-- Grid column --> */ }
                             <div className="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
                                 {/* <!-- Links --> */ }
-                                <h6 className="text-uppercase fw-bold">Best Packages</h6>
+                                <h6 className="text-uppercase fw-bold">Menu</h6>
                                 <hr />
                                 <p>
-                                    <Link to="/Services" className="text-black">Archaeological </Link>
+                                    <Link to="/Blogs" className="text-black">Blogs </Link>
                                 </p>
                                 <p>
-                                    <Link to="/Services" className="text-black">Rangamati</Link>
+                                    <Link to="/AboutUs" className="text-black">AboutUs</Link>
                                 </p>
                                 <p>
-                                    <Link to="#/Services" className="text-black">Sundarban </Link>
+                                    <Link to="/Contactus" className="text-black">Contactus </Link>
                                 </p>
                                 <p>
-                                    <Link to="/Services" className="text-black">Saint Martins</Link>
+                                    <Link to="/" className="text-black">Home</Link>
                                 </p>
                             </div>
                             {/* <!-- Grid column -->  */ }
@@ -53,19 +53,19 @@ const Footer = () => {
                             {/* <!-- Grid column --> */ }
                             <div className="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
                                 {/* <!-- Links --> */ }
-                                <h6 className="text-uppercase fw-bold">Menu</h6>
+                                <h6 className="text-uppercase fw-bold">Links</h6>
                                 <hr />
                                 <p>
-                                    <Link to="/Services" className="text-black">Services</Link>
+                                    <Link to="/" className="text-black">Terms</Link>
                                 </p>
                                 <p>
-                                    <Link to="/Blogs" className="text-black">Blog's</Link>
+                                    <Link to="/" className="text-black">Refund</Link>
                                 </p>
                                 <p>
-                                    <Link to="/AboutUs" className="text-black">About Us</Link>
+                                    <Link to="/" className="text-black">How to Cancel</Link>
                                 </p>
                                 <p>
-                                    <Link to="/Contactus" className="text-black">Contact Us</Link>
+                                    <Link to="/" className="text-black">How to Order</Link>
                                 </p>
                             </div>
                             {/* <!-- Grid column --> */ }

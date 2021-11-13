@@ -4,8 +4,9 @@
     border-radius: 50%;
     margin: auto;
 }
-.card-footer{
-    background: #333;
+.review-card{
+    background: rgb(228, 233, 255);
+    padding: 20px;
 }
 .icon-color{
     color: gold;

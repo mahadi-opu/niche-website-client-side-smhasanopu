@@ -5,15 +5,15 @@ const Review = (props) => {
     const { rating, title, info, img, userName } = props.ratings;
     return (
         <div className="card-group review">
-            <div className="card text-center">
+            <div className="card review-card text-center">
                 <img src={ img } className="card-img-top" alt="Mom/Dad" />
                 <div className="card-body">
                     <h5 className="card-title">{ title }</h5>
                     <p className="card-text"> { info }</p>
                 </div>
-                <div className="card-footer">
+                <div className=" ">
                     <p className="text-info"> { userName }</p>
-                    <small className="text-muted">
+                    <small className=" ">
                         <Rating
                             initialRating={ rating }
                             readonly

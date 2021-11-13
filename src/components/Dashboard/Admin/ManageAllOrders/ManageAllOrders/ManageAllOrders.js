@@ -5,10 +5,9 @@ import './ManageAllOrders';
 const ManageAllOrders = () => {
     const [orders, setOrders] = useState([]);
     const [status, setStatus] = useState('');
-    const [products, setproduct] = useState([]);
 
     useEffect(() => {
-        fetch('https://nashville-baby-product-server.herokuapp.com/orders')
+        fetch('http://localhost:5000/orders2')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
@@ -23,7 +22,7 @@ const ManageAllOrders = () => {
     const handleDelete = id => {
         const deleteMassege = window.confirm("Delete the item?");
         if (deleteMassege) {
-            const url = `https://nashville-baby-product-server.herokuapp.com/orders/${id}`;
+            const url = `http://localhost:5000/orders2/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -31,9 +30,8 @@ const ManageAllOrders = () => {
                 .then(data => {
                     console.log(data);
                     if (data.deletedCount > 0) {
-                        const remaining = products.filter(product => product._id !== id);
-                        setproduct(remaining);
-
+                        const remaining = orders.filter(product => product._id !== id);
+                        setOrders(remaining);
                     }
 
                 })
@@ -41,7 +39,7 @@ const ManageAllOrders = () => {
 
     }
     const handleUpdate = id => {
-        fetch(`https://nashville-baby-product-server.herokuapp.com/updateStatus/${id}`, {
+        fetch(`http://localhost:5000/updateStatus2/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -61,18 +59,19 @@ const ManageAllOrders = () => {
                     <div className="row row-cols-1 row-cols-md-4 row-cols-lg-4 g-4">
                         {
                             orders.map(order => <div className="p-2 border border-info"
-                                key={order._id}
+                                key={ order._id }
                             >
                                 <div className="card-group review">
                                     <div className="card text-center">
-                                        <img src={order.img} className="card-img-top" alt="Mom/Dad" />
+                                        <img src={ order.img } className="card-img-top" alt="Mom/Dad" />
                                         <div className="card-body">
-                                            <h5 className="card-title">{order.name}</h5>
-                                            <p className="card-title">{order._id}</p>
-                                            <p className="card-text"> {order.discription}</p>
+                                            <h5 className="card-title">{ order.name }</h5>
+                                            <p className="card-title"> Order ID: { order._id }</p>
+                                            <p className="card-title text-success">Order By: { order.userName }</p>
+                                            <p className="card-text"> { order.discription }</p>
                                             <input type="text"
-                                                defaultValue={order.status}
-                                                onBlur={handleStatus}
+                                                defaultValue={ order.status }
+                                                onBlur={ handleStatus }
                                             ></input>
                                             {/* <form>
                                                 <select>
@@ -80,12 +79,12 @@ const ManageAllOrders = () => {
                                                     <option defaultValue={ order.status }>Shiped</option>
                                                 </select>
                                             </form> */}
-                                            <button onClick={() => handleUpdate(order._id)} className="btn-light">Update</button>
+                                            <button onClick={ () => handleUpdate(order._id) } className="btn-light">Update</button>
                                         </div>
-                                        <div className="card-footer">
+                                        <div className="">
 
-                                            <small className="text-muted">
-                                                <button onClick={() => handleDelete(order._id)} className="btn-danger">Delete</button>
+                                            <small className=" ">
+                                                <button onClick={ () => handleDelete(order._id) } className="btn-info px-5">Delete</button>
                                             </small>
                                         </div>
                                     </div>

@@ -16,18 +16,14 @@ const Slider = () => {
                 <div id="carouselExampleIndicators" className="carousel slide" data-bs-ride="carousel">
                     <div className="carousel-indicators">
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
-                        <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
                         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
                     </div>
                     <div className="carousel-inner">
                         <div className="carousel-item active">
-                            <img height="650px" src="https://i.ibb.co/nkpd7zM/1.jpg" className="d-block w-100" alt="..." />
+                            <img height="650px" src="https://babynoomie.com/wp-content/uploads/2017/06/Banner-4th-of-july.jpg" className="d-block w-100" alt="..." />
                         </div>
                         <div className="carousel-item">
-                            <img height="650px" src="https://i.ibb.co/jWQNjZG/2.jpg" className="d-block w-100" alt="..." />
-                        </div>
-                        <div className="carousel-item">
-                            <img height="650px" src="https://i.ibb.co/x2CyVQW/3.jpg" className="d-block w-100" alt="..." />
+                            <img height="650px" src="https://res.cloudinary.com/mommy-nearest/image/upload/c_fill,h_400,w_900/johvjvpclqbrpvfedozc.png" className="d-block w-100" alt="..." />
                         </div>
                     </div>
                     <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">

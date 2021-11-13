@@ -3,7 +3,7 @@ import { useEffect, useState } from 'react';
 const useServices = () => {
     const [services, setServices] = useState([]);
     useEffect(() => {
-        fetch('https://nashville-baby-product-server.herokuapp.com/products')
+        fetch('http://localhost:5000/products2')
             .then(res => res.json())
             .then(data => setServices(data));
     }, []);

@@ -9,7 +9,7 @@ const MyOrders = () => {
 
 
     useEffect(() => {
-        fetch(`https://nashville-baby-product-server.herokuapp.com/myorders/?email=${user.email}`)
+        fetch(`http://localhost:5000/myorders2/?email=${user.email}`)
             .then(res => res.json())
             .then(data => setproduct(data))
     }, [user.email]);
@@ -17,7 +17,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const deleteMassege = window.confirm("Delete the item?");
         if (deleteMassege) {
-            const url = `https://nashville-baby-product-server.herokuapp.com/orders/${id}`;
+            const url = `http://localhost:5000/orders2/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -45,23 +45,22 @@ const MyOrders = () => {
                     <div className="row">
                         <div className="row row-cols-1 row-cols-md-4 row-cols-lg-4 g-4">
                             {
-                                products.map(product => <div className="p-2 border border-info"
-                                    key={product._id}
+                                products.map(product => <div className="p-2 border "
+                                    key={ product._id }
                                 >
                                     <div className="card-group review">
                                         <div className="card text-center">
-                                            <img src={product.img} className="card-img-top" alt="Mom/Dad" />
+                                            <img src={ product.img } className="card-img-top" alt="Mom/Dad" />
                                             <div className="card-body">
-                                                <h5 className="card-title">{product.name}</h5>
-                                                <p className="card-title">{product._id}</p>
-                                                <p className="card-text"> {product.discription}</p>
-                                                <p className="card-title">{product._id}</p>
-                                                <button className="btn-success">{product.status}</button>
+                                                <h5 className="card-title">{ product.name }</h5>
+                                                <p className="card-title">{ product._id }</p>
+                                                {/* <p className="card-text"> { product.discription }</p> */ }
+                                                <button className="btn-success">{ product.status }</button>
                                             </div>
-                                            <div className="card-footer">
+                                            <div className="">
 
-                                                <small className="text-muted">
-                                                    <button onClick={() => handleDelete(product._id)} className="btn-danger">Delete</button>
+                                                <small className=" ">
+                                                    <button onClick={ () => handleDelete(product._id) } className="btn-info px-5">Delete</button>
                                                 </small>
                                             </div>
                                         </div>

@@ -32,7 +32,7 @@ const Contactus = () => {
                                     <textarea className="form-control" name="message" placeholder="Message" rows="7" data-form-field="Message"></textarea>
                                 </div>
                                 <div>
-                                    <span type="" className="btn btn-lg btn-danger mt-3">CONTACT US</span>
+                                    <span type="" className="btn btn-lg btn-info mt-3">CONTACT US</span>
                                 </div>
                             </form>
                         </div>
