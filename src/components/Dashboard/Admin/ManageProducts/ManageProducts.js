@@ -7,7 +7,7 @@ const ManageProducts = () => {
 
 
     useEffect(() => {
-        fetch('http://localhost:5000/products2')
+        fetch('https://nashville-baby-product-server.herokuapp.com/products2')
             .then(res => res.json())
             .then(data => setproduct(data))
     }, []);
@@ -15,7 +15,7 @@ const ManageProducts = () => {
     const handleDelete = id => {
         const deleteMassege = window.confirm("Delete the item?");
         if (deleteMassege) {
-            const url = `http://localhost:5000/${id}`;
+            const url = `https://nashville-baby-product-server.herokuapp.com/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -46,20 +46,20 @@ const ManageProducts = () => {
                         <div className="row row-cols-1 row-cols-md-4 row-cols-lg-4 g-4">
                             {
                                 products.map(product => <div className="p-2 border border-info"
-                                    key={ product._id }
+                                    key={product._id}
                                 >
                                     <div className="card-group review">
                                         <div className="card text-center">
-                                            <img src={ product.img } className="card-img-top" alt="Mom/Dad" />
+                                            <img src={product.img} className="card-img-top" alt="Mom/Dad" />
                                             <div className="card-body">
-                                                <h5 className="card-title">{ product.name }</h5>
-                                                <p className="card-title">{ product._id }</p>
-                                                <p className="card-text"> { product.discription }</p>
+                                                <h5 className="card-title">{product.name}</h5>
+                                                <p className="card-title">{product._id}</p>
+                                                <p className="card-text"> {product.discription}</p>
                                             </div>
                                             <div className="card-footer">
 
                                                 <small className="text-muted">
-                                                    <button onClick={ () => handleDelete(product._id) } className="btn-info">Delete</button>
+                                                    <button onClick={() => handleDelete(product._id)} className="btn-info">Delete</button>
                                                 </small>
                                             </div>
                                         </div>

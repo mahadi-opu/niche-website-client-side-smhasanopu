@@ -12,7 +12,7 @@ const AddAProduct = () => {
     const { register, handleSubmit, reset } = useForm();
     const redirect_uri = location.state?.from || '/products';
     const onSubmit = data => {
-        axios.post('http://localhost:5000/products2', data)
+        axios.post('https://nashville-baby-product-server.herokuapp.com/products2', data)
             .then(res => {
                 console.log(res)
                 if (res.data.insertedId) {
@@ -28,13 +28,13 @@ const AddAProduct = () => {
             <h2 className="mt-2">Please  add a Products</h2>
             <hr />
             <hr />
-            <form onSubmit={ handleSubmit(onSubmit) }>
-                <input { ...register("name", { required: true }) } placeholder="Title" />
-                <input type="number" { ...register("price",) } placeholder="Price" />
-                <input type="number" { ...register("star",) } placeholder="star rating" />
-                <input { ...register("info") } placeholder="Short Description" />
-                <textarea  { ...register("discription") } placeholder="Description" />
-                <input { ...register("img") } placeholder="Image URL" />
+            <form onSubmit={handleSubmit(onSubmit)}>
+                <input {...register("name", { required: true })} placeholder="Title" />
+                <input type="number" {...register("price",)} placeholder="Price" />
+                <input type="number" {...register("star",)} placeholder="star rating" />
+                <input {...register("info")} placeholder="Short Description" />
+                <textarea  {...register("discription")} placeholder="Description" />
+                <input {...register("img")} placeholder="Image URL" />
 
                 <input type="submit" />
             </form>
