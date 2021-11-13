@@ -13,7 +13,7 @@ const MakeAdmin = () => {
 
         setEmail('');
         const user = { email }
-        fetch('http://localhost:5000/users/admin', {
+        fetch('https://nashville-baby-product-server.herokuapp.com/users/admin', {
             method: 'PUT',
             headers: {
                 'authorization': `Bearer ${token}`,

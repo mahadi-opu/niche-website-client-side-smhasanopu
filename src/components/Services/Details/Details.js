@@ -26,8 +26,8 @@ const Details = () => {
         data.name = detail.name;
         data.price = detail.price;
         data.status = "pending"
-        axios.post('http://localhost:5000/orders', data)
-            // axios.post('http://localhost:5000/orders', { ...data, img, name, price, discription })
+        axios.post('https://nashville-baby-product-server.herokuapp.com/orders', data)
+            // axios.post('https://nashville-baby-product-server.herokuapp.com/orders', { ...data, img, name, price, discription })
             .then(res => {
                 console.log(res)
                 if (res.data.insertedId) {

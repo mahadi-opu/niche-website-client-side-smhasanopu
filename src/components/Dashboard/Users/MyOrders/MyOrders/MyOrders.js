@@ -9,7 +9,7 @@ const MyOrders = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/myorders/?email=${user.email}`)
+        fetch(`https://nashville-baby-product-server.herokuapp.com/myorders/?email=${user.email}`)
             .then(res => res.json())
             .then(data => setproduct(data))
     }, [user.email]);
@@ -17,7 +17,7 @@ const MyOrders = () => {
     const handleDelete = id => {
         const deleteMassege = window.confirm("Delete the item?");
         if (deleteMassege) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://nashville-baby-product-server.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })

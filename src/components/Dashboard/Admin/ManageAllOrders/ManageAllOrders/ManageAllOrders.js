@@ -8,7 +8,7 @@ const ManageAllOrders = () => {
     const [products, setproduct] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:5000/orders')
+        fetch('https://nashville-baby-product-server.herokuapp.com/orders')
             .then(res => res.json())
             .then(data => setOrders(data))
     }, []);
@@ -23,7 +23,7 @@ const ManageAllOrders = () => {
     const handleDelete = id => {
         const deleteMassege = window.confirm("Delete the item?");
         if (deleteMassege) {
-            const url = `http://localhost:5000/orders/${id}`;
+            const url = `https://nashville-baby-product-server.herokuapp.com/orders/${id}`;
             fetch(url, {
                 method: 'DELETE'
             })
@@ -41,7 +41,7 @@ const ManageAllOrders = () => {
 
     }
     const handleUpdate = id => {
-        fetch(`http://localhost:5000/updateStatus/${id}`, {
+        fetch(`https://nashville-baby-product-server.herokuapp.com/updateStatus/${id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"

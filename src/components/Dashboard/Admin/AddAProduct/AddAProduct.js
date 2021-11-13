@@ -12,7 +12,7 @@ const AddAProduct = () => {
     const { register, handleSubmit } = useForm();
     const redirect_uri = location.state?.from || '/products';
     const onSubmit = data => {
-        axios.post('http://localhost:5000/products', data)
+        axios.post('https://nashville-baby-product-server.herokuapp.com/products', data)
             .then(res => {
                 console.log(res)
                 if (res.data.insertedId) {

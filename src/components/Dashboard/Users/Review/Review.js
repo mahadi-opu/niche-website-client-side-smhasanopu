@@ -13,7 +13,7 @@ const Review = () => {
     const onSubmit = data => {
         data.userEmail = user?.email;
         data.userName = user?.displayName;
-        axios.post('http://localhost:5000/reviews', data)
+        axios.post('https://nashville-baby-product-server.herokuapp.com/reviews', data)
             .then(res => {
                 console.log(res)
                 if (res.data.insertedId) {
